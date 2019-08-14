@@ -1,0 +1,145 @@
+.ri-footer {
+  background: linear-gradient(#1a1a1b, #111);
+  color: $white;
+  font-size: .9rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .ri-footer-logo {
+    display: inline-block;
+
+    svg {
+      width: 95px;
+    }
+
+    .logo-color {
+      fill: #EEE;
+    }
+  }
+}
+
+@media screen and (max-width: $phone-wide) {
+  .ri-footer {
+    font-size: 1rem;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: $phone-wide) {
+  .ri-footer__nav {
+    text-align: center;
+  }
+}
+
+.ri-footer__main {
+  padding: 2rem 0;
+  color: #999;
+
+  .site-info {
+    display: inline-block;
+  }
+
+  p {
+    display: inline;
+  }
+
+  a {
+    color: #999;
+
+    &:hover {
+      text-decoration: none;
+      color: #A7C1BA;
+    }
+  }
+}
+
+@media screen and (max-width: $phone-wide) {
+  .ri-footer__main {
+    text-align: center;
+  }
+}
+
+.ri-footer ul {
+  display: flex;
+  padding: 1em 0;
+  width: 100%;
+  margin-left: -0.75rem;
+
+  li {
+    margin-right: .05em;
+    color: $white;
+
+    &:not(:last-child):after {
+      content: "|";
+      display: inline-block;
+      padding: 0 .05em;
+      color: #aaa;
+    }
+
+    a {
+      padding: 0 1em;
+      color: $white;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media screen and (max-width: $phone-wide) {
+  .ri-footer ul {
+    display: block;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: $phone-wide) {
+  .ri-footer ul li {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: $phone-wide) {
+  .ri-footer ul li a {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+}
+
+#return-to-top {
+  background: rgba(167, 193, 186, 0.8);
+  border-radius: 0;
+  bottom: 0;
+  display: none;
+  height: 3rem;
+  position: fixed;
+  right: 0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 3rem;
+  z-index: 99;
+
+  .up-arrow {
+    height: 1.5rem;
+    width: auto;
+    color: $white;
+    margin: 0;
+    position: relative;
+    left: .8rem;
+    top: .9rem;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+
+    g {
+      fill: $white;
+    }
+  }
+
+  &:hover {
+    background: rgba(17, 17, 17, 0.9);
+
+    i {
+      color: $white;
+    }
+  }
+}

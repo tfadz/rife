@@ -1,0 +1,102 @@
+.gform_wrapper {
+  width: 100%;
+  max-width: 770px !important;
+  margin: 0 auto;
+
+  .gform_fields {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+
+    @media screen and (max-width: 800px) {
+      display: block !important;
+    }
+
+    li {
+      width: 100%;
+      max-width: 46%;
+      padding-right: 0 !important;
+      margin-right: 1% !important;
+      margin-top: 0 !important;
+      margin-bottom: 0.5em !important;
+
+      @media screen and (max-width: 800px) {
+        max-width: 100%;
+      }
+
+      &#field_2_6 {
+        max-width: 100%;
+      }
+    }
+  }
+
+  input, textarea {
+    width: 100% !important;
+    transition: .5s all;
+    background: #f9f9f9;
+
+    &:focus {
+      background: #fff;
+      box-shadow: inset 0 0 0 3px $purple;
+    }
+
+    &::placeholder {
+      font-size: 1rem !important;
+      opacity: 1;
+      color: #333 !important;
+    }
+  }
+
+  textarea {
+    margin-top: 1em;
+  }
+
+  input[type="email"],
+  input[type="text"] {
+    padding: .8em !important;
+  }
+
+  input[type="submit"] {
+    background: #FFF;
+    box-shadow: inset 0 0 0 2px $green;
+    color: $green;
+    font-size: 1.2em !important;
+    max-width: 200px !important;
+    padding: .9em 0;
+
+    &:hover {
+      background: $green;
+      color: #FFF;
+    }
+  }
+}
+
+.gform_body {
+  .gfield_checkbox li input[type="checkbox"] {
+    margin: 0 0.2rem 0 0 !important;
+    display: block;
+  }
+
+  li#field_2_8 {
+    padding-top: 1.3rem;
+  }
+
+  .gfield_description {
+    font-size: 1rem!important;
+  }
+}
+
+.gform_confirmation_wrapper {
+  background: $green;
+  color: #FFF;
+  font-size: 1.3em;
+  margin: 1em 0;
+  padding: 1.5em;
+  text-align: center;
+}
+
+.pt2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}

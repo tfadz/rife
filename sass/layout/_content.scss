@@ -1,0 +1,111 @@
+body:not(.home) #content {
+  position: relative;
+  margin-top: 6rem;
+}
+
+.site-main {
+  ul {
+    list-style: disc;
+    margin-left: 1rem;
+
+    li {
+      padding-bottom: 1rem;
+      font-size: 1.05rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  p {
+    font-size: 1.15rem;
+    line-height: 1.75rem;
+  }
+}
+
+.container {
+  &.narrow {
+    max-width: 1140px;
+  }
+
+  &.sm-width {
+    max-width: 700px;
+  }
+}
+
+.container-wide {
+  margin: 0 auto;
+  max-width: 1300px;
+}
+
+@media only screen and (min-width: 1366px) {
+  .container {
+    max-width: 1366px;
+  }
+}
+
+.content-narrow {
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.section-padding {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+#primary .entry-content {
+  padding-top: 2rem;
+}
+
+.main-content a {
+  color: #6a1953;
+  font-weight: bold;
+}
+
+.nopadding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.ri-scrolling {
+  padding: 6rem 0 8rem 0;
+  min-height: 500px;
+}
+
+@media screen and (max-width: 1024px) {
+  .ri-scrolling {
+    min-height: 400px;
+    padding: 2em 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ri-scrolling {
+    min-height: 400px;
+    padding: 2em 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ri-scrolling {
+    min-height: 300px;
+  }
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  position: inherit;
+}
+
+@media screen and (max-width: 1024px) {
+  .parallax {
+    background-attachment: inherit;
+  }
+}
+
+.page-template-template-fancy .site-main > .ri-fancy__section {
+  padding-top: 2rem;
+}

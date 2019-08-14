@@ -1,0 +1,80 @@
+.home .ri-header {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+
+  .ri-logo {
+    display: inline-flex;
+    justify-content: center;
+    padding-top: 2rem;
+    position: relative;
+    z-index: 99;
+
+    .svg-logo {
+      width: 150px;
+      height: 85px;
+
+      #Group-2 {
+        fill: $white;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $phone) {
+  .home .ri-header .ri-logo .svg-logo {
+    width: 110px;
+    height: auto;
+  }
+}
+
+.ri-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #FFFFFF;
+  border-bottom: 1px solid #EEE;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  transition: 0.2s ease-in;
+
+  &.shadowit {
+    box-shadow: 0 4px 5px 0 rgba(51, 51, 51, 0.1);
+  }
+
+  .ri-logo {
+    display: inline-flex;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+    width: 130px;
+    margin: 0 auto;
+    opacity: 1;
+    z-index: 100;
+
+    &.fade {
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .svg-logo {
+      width: 125px;
+      height: 60px;
+
+      #Group-2 {
+        fill: $purple;
+      }
+    }
+  }
+}

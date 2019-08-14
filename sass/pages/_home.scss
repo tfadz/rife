@@ -1,0 +1,274 @@
+.boiler {
+  font-size: 1.4em;
+  line-height: 1.5em;
+  font-weight: 300;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2.6em 0 1.6em;
+}
+
+@media screen and (max-width: 768px) {
+  .boiler {
+    padding-top: 1.4em;
+  }
+}
+
+.ri-spotlights {
+  padding: 1rem 0;
+}
+
+@media screen and (max-width: 800px) {
+  .ri-spotlights__list {
+    display: block;
+  }
+}
+
+.ri-spotlights__list {
+  .thumb-wrap {
+    overflow: hidden;
+    display: block;
+    height: 400px;
+    margin-bottom: 2rem;
+  }
+
+  a {
+    display: inline-flex;
+    overflow: hidden;
+    height: 400px;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    transition: .2s ease-out;
+    width: 100%;
+
+    h3 {
+      background: rgba(255, 255, 255, 0.5);
+      display: inline-block;
+      color: #333;
+      font-size: 1.2em;
+      font-weight: 300;
+      letter-spacing: .1rem;
+      margin: 0;
+      position: absolute;
+      top: 40%;
+      padding: .75rem 1rem;
+      text-align: center;
+      z-index: 2;
+      margin: 0 auto;
+      text-transform: uppercase;
+      width: auto;
+
+      &:before {
+        content: "";
+        opacity: 0;
+      }
+    }
+
+    &:hover {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+
+      &:before {
+        background: rgba(0, 0, 0, 0.2);
+        content: "";
+        display: block;
+        height: 100%;
+        left: 0;
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 3;
+      }
+
+      h3 {
+        z-index: 4;
+        background: rgba(0, 0, 0, 0.6);
+        color: #ddd;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .ri-spotlights__list .thumb-wrap {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ri-spotlights__list .thumb-wrap {
+    height: 250px;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ri-spotlights__list a {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .ri-spotlights__list a h3 {
+    font-size: 1.25rem;
+  }
+}
+
+.home-panels {
+  margin-top: 4rem;
+  border-top: 1px solid #ccc;
+}
+
+.home-panels__item {
+  display: flex;
+  color: #FCFCFC;
+
+  a {
+    color: #333;
+    position: relative;
+    text-decoration: underline;
+
+    &:hover:before {
+      content: "";
+      opacity: 1;
+    }
+  }
+
+  h2, p {
+    color: #111;
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+    color: #333;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  figure {
+    margin: 0;
+    flex: 1;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home-panels__item {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-panels__item {
+    display: block;
+  }
+}
+
+.home-panels-content {
+  background: #FCFCFC;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-panels-content__main {
+  max-width: 80%;
+}
+
+@media screen and (max-width: 736px) {
+  .home-panels-content__main {
+    max-width: 100%;
+    padding-top: 2rem;
+  }
+}
+
+.home-cta {
+  margin-top: 0;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+
+  &:before {
+    content: "";
+    background-image: linear-gradient(#ccc, white);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    opacity: .3;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.home-cta__main {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+
+  h3 {
+    color: #111;
+    font-size: 2.2rem;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+  }
+
+  h4 {
+    color: #111;
+    font-size: 2.2rem;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+
+  p {
+    margin-top: 0;
+  }
+
+  .button {
+    width: 180px;
+    margin-bottom: 2rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.bio-home .content {
+  padding-top: 6rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  position: relative;
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+    position: relative;
+
+    a {
+      text-decoration: underline;
+      color: #333;
+    }
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .bio-home .content {
+    padding-top: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

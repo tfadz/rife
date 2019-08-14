@@ -1,0 +1,132 @@
+.ri-slider {
+  display: flex;
+  overflow: hidden;
+  height: 600px;
+  margin-bottom: 2em;
+  max-width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease;
+
+  &.slick-initialized {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ri-slider {
+    height: 400px;
+  }
+}
+
+.ri-slider__slide {
+  display: block;
+  height: 600px;
+  transition: .5s all;
+  width: 100%;
+}
+
+.slickSlider {
+  overflow: hidden;
+}
+
+.slick-slide {
+  background: #fff;
+  margin: 0;
+
+  img {
+    height: 600px;
+  }
+
+  > div {
+    position: relative;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.slick-prev, .slick-next {
+  font-size: 0;
+}
+
+.slick-arrow {
+  border: 0;
+  color: $purple;
+  height: 0;
+  overflow: hidden;
+  padding-top: 120px;
+  position: absolute;
+  top: 45%;
+  transition: .3s all ease-in;
+  z-index: 9;
+  background-size: 11px;
+  background-repeat: no-repeat;
+  background-color: rgba(252, 252, 252, 0.8);
+  margin-top: -60px;
+
+  &:hover, &:focus {
+    outline: none;
+  }
+}
+
+@media screen and (max-width: $phone-wide) {
+  .slick-arrow {
+    display: none !important;
+  }
+}
+
+.slick-next {
+  width: 60px;
+  right: -1.35rem;
+  border-bottom-left-radius: 120px;
+  border-top-left-radius: 120px;
+  background-image: url(./assets/images/slick-arrow-right.svg);
+  background-position: 20px 50%;
+
+  &:hover {
+    background-color: rgba(167, 193, 186, 0.8);
+    box-shadow: none;
+    cursor: pointer;
+
+    &:before {
+      color: $purple;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .slick-next {
+    right: 0;
+    width: 38px;
+  }
+}
+
+.slick-prev {
+  width: 60px;
+  left: -1.5rem;
+  border-bottom-right-radius: 120px;
+  border-top-right-radius: 120px;
+  background-image: url(./assets/images/slick-arrow-left.svg);
+  background-position: 32px 50%;
+
+  &:hover {
+    background-color: rgba(167, 193, 186, 0.8);
+    box-shadow: none;
+    cursor: pointer;
+
+    &:before {
+      color: $purple;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .slick-prev {
+    left: 0;
+    width: 38px;
+    background-position: 10px 50%;
+  }
+}
