@@ -37,6 +37,7 @@
            
         </div>
     </section>
+
 </footer><!-- #colophon -->
 </div><!-- #page -->
 <?php wp_footer(); ?>

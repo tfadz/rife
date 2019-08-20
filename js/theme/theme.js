@@ -56,15 +56,17 @@ return {
 };
 
 })( jQuery );
-jQuery( window ).on( 'load', rifeFunctions.init );
-
-
+jQuery( document ).ready(rifeFunctions.init );
 
   // $("#riheader").headroom();
 
 
-
-
+jQuery(function($) {
+  $(document).on({
+      ajaxStart: function() { $('.loady').show();    },
+      ajaxStop: function() { $('.loady').hide();  }    
+  });
+});
 // Declare in global scope.
 var rife_load_posts;
 
@@ -80,20 +82,21 @@ var rife_load_posts;
     rife_vars.pageNumber++;
 
     $.ajax({
-        type: 'GET',
-        url: rife_vars.ajaxurl,
-        data: {
-          pageNumber: rife_vars.pageNumber,
-          action: 'rife_load_posts'
-        },
-        success: function( json ) {
-          if ( json.count > 0 ) {
-            var $content = $(json.html);
-            $( '.rife-posts' ).append($content).masonry( 'appended', $content );
-          }
-          if ( json.count >= rife_vars.posts_per_page ) {
-            $clicked.removeClass( 'disabled' );
-          } else {
+      type: 'GET',
+      url: rife_vars.ajaxurl,
+      data: {
+        pageNumber: rife_vars.pageNumber,
+        action: 'rife_load_posts'
+      },
+
+      success: function( json ) {
+        if ( json.count > 0 ) {
+          var $content = $(json.html);
+          $( '.rife-posts' ).append($content).masonry( 'appended', $content );
+        }
+        if ( json.count >= rife_vars.posts_per_page ) {
+          $clicked.removeClass( 'disabled' );
+        } else {
             // Once we have no more data, the button can go away.
             $clicked.remove();
           }
@@ -160,6 +163,8 @@ jQuery(window).ready(function ($) {
     });
 
 }); // document ready.
+
+
 
 
 
