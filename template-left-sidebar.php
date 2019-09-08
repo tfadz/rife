@@ -14,7 +14,6 @@
 
                 <article class="col-lg-8">
                     <?php the_field('right_column'); ?>
-
                 </article>
 
             </div>

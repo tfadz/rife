@@ -59,6 +59,11 @@
       text-transform: uppercase;
       width: auto;
 
+      @media screen and (max-width: $tablet) {
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+      }
+
       &:before {
         content: "";
         opacity: 0;
@@ -119,6 +124,11 @@
 .home-panels {
   margin-top: 4rem;
   border-top: 1px solid #ccc;
+
+  @media screen and (max-width: $tablet) {
+    border: none;
+    margin-top: 1rem;
+  }
 }
 
 .home-panels__item {
@@ -178,10 +188,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media screen and (max-width: $tablet) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
 
 .home-panels-content__main {
   max-width: 80%;
+
+  @media screen and (max-width: $tablet) {
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 736px) {
@@ -195,6 +214,10 @@
   margin-top: 0;
   position: relative;
   border-bottom: 1px solid #ccc;
+
+  @media screen and (max-width: $tablet) {
+    border: none;
+  }
 
   &:before {
     content: "";
@@ -219,7 +242,7 @@
   h3 {
     color: #111;
     font-size: 2.2rem;
-    font-family: "Playfair Display", serif;
+    font-family: $playfair;
     margin-bottom: 0;
     padding-bottom: 1rem;
   }
@@ -227,7 +250,7 @@
   h4 {
     color: #111;
     font-size: 2.2rem;
-    font-family: "Playfair Display", serif;
+    font-family: $playfair;
     margin-bottom: 0;
     padding-bottom: 1rem;
     font-size: 1.8rem;
@@ -252,6 +275,11 @@
   padding-left: 2.5rem;
   padding-right: 2.5rem;
   position: relative;
+
+  @media screen and (max-width: $tablet) {
+    padding-top: 2rem;
+    padding-left: 0;
+  }
 
   p {
     font-size: 1.2rem;

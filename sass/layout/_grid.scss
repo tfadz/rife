@@ -2,7 +2,7 @@
   padding-right: 5rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $tablet) {
   .right-sidebar .left-col {
     padding-right: 15px;
   }
@@ -13,7 +13,7 @@
   padding-right: 0;
 }
 
-@media screen and (max-width: 736px) {
+@media screen and (max-width: $tablet) {
   .nopadding {
     padding-left: 15px;
     padding-right: 15px;
@@ -22,10 +22,14 @@
 
 .nopadding-left {
   padding-left: 0;
+
+  @media screen and (max-width: $tablet) {
+    padding-left: 15px;
+  }
 }
 
-@media screen and (max-width: 736px) {
-  .nopadding-left {
-    padding-left: 15px;
+.container {
+  @media screen and (max-width: $tablet) {
+    max-width: 100%;
   }
 }

@@ -526,6 +526,12 @@ body:not(.home) {
   }
 }
 
+.navbar-row {
+  height: 700px;
+  overflow-y: auto;
+  padding-bottom: 5rem;
+}
+
 @media screen and (max-width: 800px) {
   .ri-navigation {
     display: none;

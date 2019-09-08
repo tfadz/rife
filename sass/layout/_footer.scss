@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
 
   .ri-footer-logo {
     display: inline-block;
@@ -20,33 +21,20 @@
   }
 }
 
-// .test {
-//   background: red;
-//   transform: perspective(400px) rotateX(-30deg);
-//   transform-origin: 0% 50%;
-//   width: 500px;
-//   height: 100px;
-//   display: block;
-//   margin: 2rem;
-//   position: relative;
-  
-// }
 
 @media screen and (max-width: $phone-wide) {
   .ri-footer {
     font-size: 1rem;
     overflow: hidden;
   }
-}
-
-@media screen and (max-width: $phone-wide) {
   .ri-footer__nav {
     text-align: center;
   }
 }
 
 .ri-footer__main {
-  padding: 2rem 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   color: #999;
 
   .site-info {

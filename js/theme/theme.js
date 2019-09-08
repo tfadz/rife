@@ -10,18 +10,25 @@ var rifeFunctions = (function( $ ) {
   slider = function() {
    $('.ri-slider').slick({
     autoplay: false,
-    lazyLoad: 'ondemand',
     dots: false,
     infinite: true,
     speed: 200,
     cssEase: 'ease-out',
-    slidesToShow: 4,
+    slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
     variableWidth: true,
     swipeToSlide: true,
-    swipe: true
-  });
+    swipe: true,
+    responsive: [
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      }
+      ]
+    });
  },
 
  aos = function() {
@@ -61,23 +68,23 @@ jQuery( document ).ready(rifeFunctions.init );
   // $("#riheader").headroom();
 
 
-jQuery(function($) {
-  $(document).on({
+  jQuery(function($) {
+    $(document).on({
       ajaxStart: function() { $('.loady').show();    },
       ajaxStop: function() { $('.loady').hide();  }    
+    });
   });
-});
 // Declare in global scope.
 var rife_load_posts;
 
- jQuery(window).ready(function ($) {
+jQuery(window).ready(function ($) {
 
   /**
    * Load more posts as cards via AJAX
    *
    * @param {object} $clicked  jQuery object that triggered rife_load_posts
    */
-  rife_load_posts = function ( $clicked ) {
+   rife_load_posts = function ( $clicked ) {
     // Increase initial page value by 1.
     rife_vars.pageNumber++;
 
@@ -111,7 +118,7 @@ var rife_load_posts;
   /**
    * Get more posts click event.
    */
-  $( '#more_posts' ).on( 'click', function( e ) {
+   $( '#more_posts' ).on( 'click', function( e ) {
     // When btn is pressed.
     e.preventDefault();
 
@@ -134,33 +141,33 @@ var rife_load_posts;
 
 jQuery(window).ready(function ($) {
       // Filter Category
- $( ".js-category" ).on( "change", function() {
+      $( ".js-category" ).on( "change", function() {
         var category = $( '.js-category' ).val();
 
         data = {
-            'action': 'filterposts',
-            'category': category,
+          'action': 'filterposts',
+          'category': category,
         };
 
         $.ajax({
-            url: rife_vars.ajaxurl,
-            data: data,
-            type: 'POST',
-            beforeSend: function ( xhr ) {
-                $('.filtered-posts').html( 'Loading...' );
-                $('.js-category').attr( 'disabled', 'disabled' );
-            },
-            success: function( data ) {
-                if ( data ) {
-                    $('.filtered-posts').html( data.posts );
+          url: rife_vars.ajaxurl,
+          data: data,
+          type: 'POST',
+          beforeSend: function ( xhr ) {
+            $('.filtered-posts').html( 'Loading...' );
+            $('.js-category').attr( 'disabled', 'disabled' );
+          },
+          success: function( data ) {
+            if ( data ) {
+              $('.filtered-posts').html( data.posts );
 
-                    $('.js-category').removeAttr('disabled');
-                } else {
-                    $('.filtered-posts').html( 'No posts found.' );
-                }
+              $('.js-category').removeAttr('disabled');
+            } else {
+              $('.filtered-posts').html( 'No posts found.' );
             }
+          }
         });
-    });
+      });
 
 }); // document ready.
 
