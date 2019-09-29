@@ -4,46 +4,66 @@ var rifeFunctions = (function( $ ) {
     slider();
     aos();
     toggleLogo();
+    toggleFilter();
     shadowHeader();
   },
 
-  slider = function() {
-   $('.ri-slider').slick({
-    autoplay: false,
-    dots: false,
-    infinite: true,
-    speed: 200,
-    cssEase: 'ease-out',
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    centerMode: true,
-    variableWidth: true,
-    swipeToSlide: true,
-    swipe: true,
-    responsive: [
-    {
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      }
-      ]
-    });
- },
-
- aos = function() {
-  AOS.init({
-    offset: 200,
-    duration: 600,
-    easing: 'ease-out',
-    delay: 100,
-  })
-},
+    slider = function() {
+      $('.ri-slider').slick({
+          autoplay: false,
+          dots: false,
+          infinite: true,
+          speed: 200,
+          cssEase: 'ease-out',
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          variableWidth: true,
+          swipeToSlide: true,
+          swipe: true,
+          responsive: [
+          {
+            breakpoint: 800,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              }
+          },
+          ]
+      });
+  },
+  
+   aos = function() {
+    AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: 'ease-out',
+      delay: 100,
+    })
+  },
 
 toggleLogo = function() {
   // Fade out logo when clicking toggle button
   $('.navbar-toggle').click(function(event) {
     $('.ri-logo').toggleClass('fade');
+  });
+},
+
+toggleFilter = function() {
+  $('.filter-toggle').click(function(event) {
+    event.preventDefault();
+    $('.filter-close').show();
+    $('.filter-holder').show();
+     event.stopPropagation();
+
+  });
+
+  $('.filter-close').click(function(event) {
+    event.preventDefault();
+    $('.filter-close').hide();
+    $('.filter-holder').hide();
+    event.stopPropagation();
+
   });
 },
 

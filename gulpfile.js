@@ -1,6 +1,6 @@
 // Include the necessary modules.
 
-// Npm install dependencies -- > npm install gulp browser-sync gulp-sass gulp-postcss autoprefixer gulp-concat gulp-sourcemaps
+// Npm install dependencies -- > npm install gulp@3.9.1 browser-sync gulp-sass gulp-postcss autoprefixer gulp-concat gulp-sourcemaps --save-dev
 
 
 var gulp = require('gulp'),
@@ -10,8 +10,8 @@ var gulp = require('gulp'),
     autoprefixer = require('autoprefixer');
     concat = require('gulp-concat');
     sourcemaps = require('gulp-sourcemaps');
-    uglify = require('gulp-uglify');
     plumber = require('gulp-plumber');
+    uglify = require('gulp-uglify');
 
 
 // Configure Browsersync.
@@ -38,7 +38,6 @@ gulp.task('sass', function() {
     return gulp.src([
         'node_modules/bootstrap/dist/css/bootstrap.min.css',
         'node_modules/slick-carousel/slick/slick.css',
-        'node_modules/aos/dist/aos.css',
         'sass/style.scss'
         ])
         .pipe(sourcemaps.init())
@@ -63,9 +62,6 @@ gulp.task('sass', function() {
 gulp.task('js', function () {
     return gulp.src([
         'node_modules/slick-carousel/slick/slick.js',
-        'node_modules/aos/dist/aos.js',
-        'node_modules/headroom.js/dist/headroom.js',
-        'node_modules/headroom.js/dist/jQuery.headroom.js',
         'node_modules/bootstrap/dist/js/bootstrap.min.js',
         'js/theme/*.js'
     ])

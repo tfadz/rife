@@ -1,8 +1,12 @@
 .blog-main {
-  padding-top: 2rem;
-
   h1 {
     padding-bottom: 1rem;
+    padding-top: 1rem;
+
+    @media screen and (max-width: $tablet) {
+      padding-top: .5rem;
+      padding-bottom: .25rem;
+    }
   }
 }
 
@@ -17,7 +21,7 @@
   padding-bottom: 4rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $tablet) {
   .rife-blog-main {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -28,16 +32,21 @@
   line-height: normal;
   display: block;
   overflow: hidden;
+  margin: 0 0 .5rem .5rem;
   padding: 0;
-  margin: 0;
-  height: 400px;
+  height: 300px;
+  flex: 0 0 31.333333%;
+  max-width: 31.333333%;
 
-  &:nth-child(3n) {
-    height: 550px;
+  @media screen and (max-width: $tablet) {
+    flex: inherit;
+    max-width: 48%;
+    height: 250px;
   }
 
-  &:nth-child(even) {
-    height: 300px;
+  @media screen and (max-width: $phone) {
+    max-width: 47%;
+    height: 180px;
   }
 
   a {
@@ -76,6 +85,10 @@
       top: 0;
       left: 0;
       z-index: 10;
+
+      @media screen and (max-width: $phone) {
+        padding: 1rem;
+      }
     }
 
     .post-thumbnail {
@@ -102,9 +115,14 @@
 
   h2 {
     font-weight: 300;
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin: 0;
     padding: 1rem 0 0.5rem;
+
+    @media screen and (max-width: $phone) {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+    }
 
     a {
       color: #FCFCFC;
@@ -363,4 +381,134 @@
   text-transform: uppercase;
   width: 100%;
   z-index: 10;
+}
+
+.rife-posts {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: $tablet) {
+    padding-top: 3.5rem;
+  }
+}
+
+// Search Filter
+.searchandfilter {
+  width: 100%;
+  background: white;
+  padding: 0 2rem 2rem 2rem;
+
+  @media screen and (max-width: $tablet) {
+    padding: 2rem;
+    display: block;
+  }
+
+  ul {
+    margin: 0;
+    color: $black;
+
+    li {
+      max-width: 90%;
+      margin: 0 auto;
+
+      @media screen and (max-width: $tablet) {
+        margin: 0;
+        max-width: 100%;
+      }
+    }
+
+    label {
+      font-size: .9rem;
+
+      @media screen and (max-width: $tablet) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .sf-field-category ul {
+    display: block;
+
+    @media screen and (max-width: $tablet) {
+      display: flex;
+      margin: 0;
+      flex-wrap: wrap;
+
+      li {
+        max-width: 100%;
+        width: 50%;
+      }
+    }
+
+    // column-count: 5;
+    margin: 0;
+  }
+}
+
+.filter-holder {
+  position: relative;
+
+  @media screen and (max-width: $tablet) {
+    background: rgba($white, 0.4);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 30;
+    height: 100vh;
+  }
+}
+
+.filter-close {
+  background: $white;
+  border: 2px solid $purple;
+  color: $purple;
+  display: none;
+  font-size: .9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: .5rem .25rem;
+  position: fixed;
+  right: 1rem;
+  text-align: center;
+  top: 2rem;
+  width: 2rem;
+  z-index: 35;
+}
+
+.filter-toggle {
+  background: $white;
+  border: 2px solid $purple;
+  color: $purple;
+  display: none;
+  font-size: .9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  left: 0;
+  margin: 0 auto;
+  padding: .5rem .25rem;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 68px;
+  z-index: 20;
+
+  @media screen and (max-width: $tablet) {
+    display: block;
+  }
+}
+
+.blog-pagination {
+  padding-top: 4rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+
+  .page-numbers {
+    margin-left: .5rem;
+  }
 }

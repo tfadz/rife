@@ -251,7 +251,7 @@ add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
  * Outputs HTML code.
  */
 function rife_load_posts() {
-  $ppp  = 8;
+  $ppp  = 9;
   $page = 0;
 
   // Adjust our query parameters when being called via AJAX.

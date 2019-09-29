@@ -18,15 +18,15 @@
 
 
 // Call Masonry
-jQuery(document).ready(function($){
-  var $container = $('.grid');
+// jQuery(document).ready(function($){
+//   var $container = $('.grid');
 
-  $container.imagesLoaded( function() {
-    $container.masonry({
-      itemSelector: '.grid-item',
-      breakAt: {
-        768: 1,
-      } 
-    });
-  });
-});
+//   $container.imagesLoaded( function() {
+//     $container.masonry({
+//       itemSelector: '.grid-item',
+//       breakAt: {
+//         768: 1,
+//       } 
+//     });
+//   });
+// });
