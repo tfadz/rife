@@ -20,7 +20,7 @@
                 <button class="filter-toggle">Filter</button>
                 <button class="filter-close">X</button>
                     <nav class="filter-holder">
-                        <?php echo do_shortcode( '[searchandfilter id="17244"] ' ); ?>
+                        <?php echo do_shortcode( '[searchandfilter id="17761"] ' ); ?>
                     </nav>
             </div>
 
@@ -29,19 +29,17 @@
                     <?php 
                     $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
                     $args = array(
-                     'post_type' => 'posts',
+                     'post_type' => 'post',
                      'posts_per_page' => 12,
                      'order'   => 'ASC',
                      'orderby' => 'title',
                      'paged'   => $paged,
                     );
-                    $args['search_filter_id'] = 17244;
+                    $args['search_filter_id'] = 17761;
                     $query = new WP_Query($args);
                     ?>
 
                     <?php if ( $query->have_posts() ) : ?>
-
-                      <?php $counter = 0; ?>
 
                       <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
 

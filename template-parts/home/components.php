@@ -2,7 +2,7 @@
     
 
     <?php if (get_row_layout() == "content_block"): ?>
-        <section class="container main-content">
+        <section class="container main-content boiler">
             <?php the_sub_field('content'); ?>
         </section>
     <?php endif; ?>
@@ -19,7 +19,7 @@
                     $alt = $gImage['alt'];
                     ?>
                     <div class="col-lg-4 col-sm-12">
-                        <div class="thumb-wrap">
+                        <div class="thumb-wrap" data-aos="fade-up">
                             <a href="<?php echo $gLink ?>" style="background-image:url(<?php echo $gImage['sizes']['large'] ?>); background-repeat: no-repeat;background-size: cover;">
                                 <h3><?php echo $gTitle ?></h3>
                             </a>
@@ -45,7 +45,7 @@
         $bio_content = get_sub_field('content');
         $bio_image = get_sub_field('image')['url'];
         ?>
-        <section class="container container-fluid nopadding bio-home">
+        <section class="container container-fluid nopadding bio-home" data-aos="fade">
             <div class="row">
                 <div class="col-lg-7 col-md-12 nopadding-left"><img src="<?php echo $bio_image ?>" alt=""></div>
                 <div class="col-lg-5 col-md-12 content"><p><?php echo $bio_content ?></p></div>
@@ -57,13 +57,13 @@
     <?php if (get_row_layout() == "slider_content"): ?>
     <!-- Slider -->
         <section class="ri-slider">
-          <?php if (have_rows('slides')) : while (have_rows('slides')) : the_row();
+            <?php if (have_rows('slides')) : while (have_rows('slides')) : the_row();
                 $slide = get_sub_field('slide');
-           ?>
-        <div style="position: relative;">
-            <img src="<?php echo $slide['sizes']['large']; ?>" alt="<?php echo $slide['alt']; ?>">
-        </div>
-        <?php endwhile; endif; ?>
+                ?>
+                <div style="position: relative;">
+                    <img src="<?php echo $slide['sizes']['large']; ?>" alt="<?php echo $slide['alt']; ?>">
+                </div>
+            <?php endwhile; endif; ?>
         </section>
     <?php endif; ?>
 
@@ -76,8 +76,8 @@
             $pContent = get_sub_field('panel_content');
             $pLink = get_sub_field('link');
             ?>
-            <article class="home-panels__item">
-                <aside class="home-panels-content" >
+            <article class="home-panels__item" data-aos="fade">
+                <aside class="home-panels-content">
                     <div class="home-panels-content__main container"><?php echo $pContent ?></div>
                 </aside>
                 <figure>
@@ -100,7 +100,7 @@
             $cta_tc = get_sub_field('cta_color_text');
             $cta_lc = get_sub_field('cta_color_link');
         ?>
-        <section class="home-cta" style="background-color:<?php echo $cta_color; ?>">
+        <section class="home-cta" style="background-color:<?php echo $cta_color; ?>" data-aos="fade">
             <article class="container narrow">
                 <div class="home-cta__main">
                     <?php echo $cta_content; ?> 

@@ -450,6 +450,25 @@
             "button_label": "Add a component",
             "min": "",
             "max": ""
+        },
+        {
+            "key": "field_5dfe497137907",
+            "label": "FAQ Schema",
+            "name": "faq_schema",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -471,5 +490,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1564799261
+    "modified": 1576946051
 }

@@ -19,6 +19,7 @@ gulp.task('browser-sync', function() {
     var files = [
         './style.css',
         './*.php',
+        './template-parts/**/*.php',
         './js/theme/*.js'
     ];
 
@@ -38,9 +39,10 @@ gulp.task('sass', function() {
     return gulp.src([
         'node_modules/bootstrap/dist/css/bootstrap.min.css',
         'node_modules/slick-carousel/slick/slick.css',
+        'node_modules/aos/dist/aos.css',
         'sass/style.scss'
         ])
-        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed' })
             .on('error', sass.logError)
         )
@@ -52,7 +54,7 @@ gulp.task('sass', function() {
             })
         ]))
         .pipe(concat('style.css'))
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.write())
         .pipe(gulp.dest('./'))
         .pipe(browserSync.stream());
 });
@@ -62,6 +64,8 @@ gulp.task('sass', function() {
 gulp.task('js', function () {
     return gulp.src([
         'node_modules/slick-carousel/slick/slick.js',
+        'node_modules/aos/dist/aos.js',
+        'node_modules/rellax/rellax.js',
         'node_modules/bootstrap/dist/js/bootstrap.min.js',
         'js/theme/*.js'
     ])

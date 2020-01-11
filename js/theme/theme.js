@@ -3,6 +3,7 @@ var rifeFunctions = (function( $ ) {
   var init = function() {
     slider();
     aos();
+    rellaxPar();
     toggleLogo();
     toggleFilter();
     shadowHeader();
@@ -39,7 +40,12 @@ var rifeFunctions = (function( $ ) {
       duration: 600,
       easing: 'ease-out',
       delay: 100,
+      disable: 'mobile'
     })
+  },
+
+  rellaxPar = function() {
+    var rellax = new Rellax('.rellax');
   },
 
 toggleLogo = function() {

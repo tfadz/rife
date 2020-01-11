@@ -1,0 +1,36 @@
+{
+  "name": "rife",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "aos": "^2.3.4",
+    "autoprefixer": "^9.5.1",
+    "bootstrap": "^4.3.1",
+    "browser-sync": "^2.26.7",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "headroom.js": "^0.9.4",
+    "rellax": "^1.10.0",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tfadz/rife.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tfadz/rife/issues"
+  },
+  "homepage": "https://github.com/tfadz/rife#readme"
+}
