@@ -14,6 +14,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify');
 
 
+
 // Configure Browsersync.
 gulp.task('browser-sync', function() {
     var files = [
@@ -26,7 +27,7 @@ gulp.task('browser-sync', function() {
 // Initial Browsersync with PHP Server
 browserSync.init(files, {
     proxy: "http://localhost:8888/rife/" // Change to match local host address
-  
+
   });
 
 });
@@ -51,7 +52,9 @@ gulp.task('sass', function() {
                 overrideBrowserslist: ['last 2 versions'],
                 cascade: false,
                 grid: true
-            })
+            }),
+            require("css-mqpacker")()
+
         ]))
         .pipe(concat('style.css'))
         //.pipe(sourcemaps.write())
@@ -76,7 +79,7 @@ gulp.task('js', function () {
     .pipe(concat('theme.js'))
     .pipe(uglify())
     .pipe(gulp.dest('js'));
- 
+
 });
 
 // Create the default task that can be called using 'gulp'.

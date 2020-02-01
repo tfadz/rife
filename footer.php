@@ -17,26 +17,26 @@
 </a>
 </div><!-- #content -->
 <footer id="colophon" class="site-footer ri-footer">
-    <section class="ri-footer__main container narrow">
-        <div class="row">
+<section class="ri-footer__main container narrow">
+<div class="row">
 
-            <div class="col-lg-12 col-sm-12">
-                    <div class="ri-footer__links">
-                        <?php
-                        wp_nav_menu( array(
-                            'theme_location' => 'footer-menu',
-                            'menu_class'        => 'ri-footer__nav',
-                        ) );
-                        ?>
-                    </div>
-            <div class="site-info">
-                &copy; <?php echo date("Y"); ?> Rife Photography <?php the_field('footer_contact', 'options') ?>
-            </div><!-- .site-info -->
-            </div>
+<div class="col-lg-12 col-sm-12">
+  <div class="ri-footer__links">
+  <?php
+    wp_nav_menu(array(
+      'theme_location' => 'footer-menu',
+      'menu_class'        => 'ri-footer__nav',
+    ));
+  ?>
+  </div>
+<div class="site-info">
+&copy; <?php echo date("Y"); ?> Rife Photography <?php the_field('footer_contact', 'options') ?>
+</div><!-- .site-info -->
+</div>
 
 
-        </div>
-    </section>
+</div>
+</section>
 
 </footer><!-- #colophon -->
 </div><!-- #page -->

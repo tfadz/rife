@@ -16,7 +16,7 @@
         <?php endif; ?>
 
 
-        <?php if(get_row_layout() == "parallax_image"): ?> 
+        <?php if(get_row_layout() == "parallax_image"): ?>
             <section class="ri-scrolling parallax" style="background-image: url(<?php the_sub_field('fancy_image'); ?>);">
               <div class="parallax-content"></div>
           </section>
@@ -26,7 +26,7 @@
       <?php if(get_row_layout() == "slider_block"): ?>
           <!-- Slider -->
           <section class="ri-slider">
-              <?php if(have_rows('slides')) : while(have_rows('slides')) : the_row(); 
+              <?php if(have_rows('slides')) : while(have_rows('slides')) : the_row();
                 $slide = get_sub_field('s_image');
                 ?>
                 <div>
@@ -36,7 +36,7 @@
         </section>
     <?php endif; ?>
 
-    <?php if(get_row_layout() == "pricing_block"): ?> 
+    <?php if(get_row_layout() == "pricing_block"): ?>
         <!-- Pricing -->
         <section class="container pricing-blocks">
             <div class="row">
