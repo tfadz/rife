@@ -23,28 +23,39 @@ input[type="submit"] {
   }
 }
 
-.button {
+.btn {
   display: inline-block;
-  color: $purple;
-  box-shadow: 0 0 0 1px $purple;
-  padding: .75rem 1.5rem;
+  border: 1px solid $gold;
+  color: $gold;
+  padding: 1rem 1.25rem .85rem;
+  line-height: 1;
   transition: .3s all;
   border-radius: 2px;
-  font-size: 1rem;
-  letter-spacing: .15rem;
   font-weight: bold;
-  margin: .5rem 0;
+  margin: 1rem 0;
+  @include letterspace;
+
+  &.solid {
+    background: $gold;
+    color: $white;
+    border: none;
+    &:hover {
+      background: none;
+      box-shadow: 0 0 0 1px $gold;
+      color: $gold;
+    }
+  }
 
   .fa {
     margin-right: .5rem;
     font-size: 1.5rem;
     position: relative;
     top: .15rem;
-    color: $purple;
+    color: $gold;
   }
 
   &:hover {
-    background-color: $purple;
+    background-color: $gold;
     color: $white;
     text-decoration: none;
 

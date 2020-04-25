@@ -1,8 +1,15 @@
 <?php if (get_field('home_widgets')) : while (has_sub_field('home_widgets')) : ?>
     
 
+    <?php if (get_row_layout() == "block_intro"): ?>
+        <section class="container intro">
+            <h2><?php the_sub_field('title'); ?></h2>
+            <h3><?php the_sub_field('subtitle'); ?></h3>
+        </section>
+    <?php endif; ?>
+
     <?php if (get_row_layout() == "content_block"): ?>
-        <section class="container main-content boiler">
+        <section class="container">
             <?php the_sub_field('content'); ?>
         </section>
     <?php endif; ?>
@@ -10,8 +17,8 @@
 
     <?php if (get_row_layout() == "gallery"): ?>
     <!-- Gallery -->
-        <section class="container container-fluid nopadding">
-            <div class="row ri-spotlights__list">
+        <section>
+            <div class="row ri-spotlights__list no-gutters">
                 <?php if (have_rows('spotlights')) : while (have_rows('spotlights')) : the_row();
                     $gImage = get_sub_field('g_image');
                     $gTitle = get_sub_field('g_title');
@@ -39,16 +46,24 @@
     <?php endif; ?>
 
 
-    <?php if (get_row_layout() == "bio_block"): ?>
+    <?php if (get_row_layout() == "lr_image_text"): ?>
     <!-- Bio Block -->
         <?php 
-        $bio_content = get_sub_field('content');
-        $bio_image = get_sub_field('image')['url'];
+            $caption = get_sub_field('caption');
+            $title = get_sub_field('title');
+            $text = get_sub_field('text');
+            $image = get_sub_field('image')['url'];
         ?>
-        <section class="container container-fluid nopadding bio-home" data-aos="fade">
+        <section class="container-fluid nopadding lr_img_txt" data-aos="fade">
             <div class="row">
-                <div class="col-lg-7 col-md-12 nopadding-left"><img src="<?php echo $bio_image ?>" alt=""></div>
-                <div class="col-lg-5 col-md-12 content"><p><?php echo $bio_content ?></p></div>
+                <div class="col-lg-6 col-md-12 nopadding-left" style="background:url(<?php echo $image ?>)no-repeat;background-size: cover;"></div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="content">
+                        <h4><?php echo $caption ?></h4>
+                        <h3><?php echo $title ?></h3>
+                        <div><?php echo $text ?></div>
+                    </div>
+                </div>
             </div>
         </section>
     <?php endif; ?>
@@ -70,52 +85,69 @@
 
     <?php if (get_row_layout() == "panels"): ?>
     <!-- Panels -->
-    <section class="home-panels">
-        <?php if (have_rows('home_panel')) : while (have_rows('home_panel')) : the_row();
+    <section class="container home-panels">
+ <!--        <div class="row">
+            <div class="col-lg-12"><h2 class="styled">Title that describes the section</h2></div>
+        </div> -->
+
+      <div class="row">
+        <div class="col-lg-12">
+          <?php if (have_rows('home_panel')) : while (have_rows('home_panel')) : the_row();
             $pImage = get_sub_field('panel_image');
             $pContent = get_sub_field('panel_content');
-            $pLink = get_sub_field('link');
-            ?>
-            <article class="home-panels__item" data-aos="fade">
-                <aside class="home-panels-content">
-                    <div class="home-panels-content__main container"><?php echo $pContent ?></div>
-                </aside>
-                <figure>
-                    <?php if($pLink) : ?>
-                        <a href="<?php echo $pLink ?>"><img src="<?php echo $pImage ?>" alt=""></a>
-                        <?php else : ?>
-                            <img src="<?php echo $pImage ?>" alt="">
-                        <?php endif; ?>
-                    </figure>
-                </article>
-            <?php endwhile; endif; ?>
+            $title = get_sub_field('title');
+          ?>
+          <article class="item">
+            <aside class="content">
+              <div class="main">
+                <h2><?php echo $title ?></h2>
+                <?php echo $pContent ?>
+                </div>
+            </aside>
+          <figure>
+            <img src="<?php echo $pImage ?>" alt="">
+          </figure>
+          </article>
+      <?php endwhile; endif; ?>
+
+        </div>
+      </div>
+
+
+           
         </section>
     <?php endif; ?>
 
     <?php if (get_row_layout() == "call_to_action"): ?>
-    <!-- Call to Action -->
+        <!-- Call to Action -->
         <?php 
-            $cta_color = get_sub_field('cta_color');
-            $cta_content = get_sub_field('cta_content');
-            $cta_tc = get_sub_field('cta_color_text');
-            $cta_lc = get_sub_field('cta_color_link');
+            $title1 = get_sub_field('title1');
+            $text1 = get_sub_field('text1');
+            $btn1 = get_sub_field('button');
+            $btn1_link = get_sub_field('button_link');
+            $title2 = get_sub_field('title2');
+            $text2 = get_sub_field('text2');
+            $btn2 = get_sub_field('button2');
+            $btn2_link = get_sub_field('button_link2');
         ?>
-        <section class="home-cta" style="background-color:<?php echo $cta_color; ?>" data-aos="fade">
-            <article class="container narrow">
-                <div class="home-cta__main">
-                    <?php echo $cta_content; ?> 
-                </div>
+        <section class="home-cta">
+            <article class="container">
+               <div class="row">
+                   <div class="col-lg-12">
+                        <div class="cta cta1">
+                            <h3><?php echo $title1 ?></h3>
+                            <p><?php echo $text1 ?></p>
+                            <a target="_blank" href="<?php echo $btn1_link ?>" class="btn "><?php echo $btn1 ?></a>
+                            <br><br>
+
+                            <h3><?php echo $title2 ?></h3>
+                            <p><?php echo $text2 ?></p>
+                            <div> <a target="_blank" href="<?php echo $btn2_link ?>" class="btn"><?php echo $btn2 ?></a></div>
+
+                        </div>
+                   </div>
+               </div>
             </article>
-            <?php if($cta_tc) : ?>
-                <style>
-                    .home-cta__main {
-                        color: <?php echo $cta_tc; ?>
-                    }
-                    .home-cta__main a {
-                        color: <?php echo $cta_lc; ?>
-                    }
-                </style>
-            <?php endif; ?>
         </section>
     <?php endif; ?>
 <?php endwhile; endif; ?>

@@ -8,6 +8,14 @@ $grayer: #CCCCCC;
 $dark: #333333;
 $black: #111111;
 
+$gold: #B08038;
+.gold {
+  background: $gold;
+  color: white;
+  display: inline-block;
+  padding: .25rem .45rem;
+}
+
 
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
@@ -19,7 +27,7 @@ $color__background-ins: #fff9c0;
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: $purple;
+$color__link: $gold;
 $color__link-hover: #474040;
 $color__text-main: #333333;
 

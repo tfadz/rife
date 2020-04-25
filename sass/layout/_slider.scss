@@ -53,19 +53,19 @@
 }
 
 .slick-arrow {
+  background-color: rgba(252, 252, 252, 0.8);
+  background-repeat: no-repeat;
+  background-size: 11px;
   border: 0;
   color: $purple;
   height: 0;
+  margin-top: -60px;
   overflow: hidden;
   padding-top: 120px;
   position: absolute;
   top: 45%;
   transition: .3s all ease-in;
   z-index: 9;
-  background-size: 11px;
-  background-repeat: no-repeat;
-  background-color: rgba(252, 252, 252, 0.8);
-  margin-top: -60px;
 
   &:hover, &:focus {
     outline: none;

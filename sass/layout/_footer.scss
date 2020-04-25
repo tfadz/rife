@@ -1,7 +1,7 @@
 .ri-footer {
   background: linear-gradient(#1a1a1b, #111);
   color: $white;
-  font-size: .9rem;
+  font-size: 0.75rem;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -21,12 +21,12 @@
   }
 }
 
-
 @media screen and (max-width: $phone-wide) {
   .ri-footer {
     font-size: 1rem;
     overflow: hidden;
   }
+
   .ri-footer__nav {
     text-align: center;
   }
@@ -43,6 +43,8 @@
 
   p {
     display: inline;
+
+    @include letterspace;
   }
 
   a {
@@ -68,20 +70,26 @@
   margin-left: -0.75rem;
 
   li {
-    margin-right: .05em;
+    margin-right: .03em;
     color: $white;
 
     &:not(:last-child):after {
       content: "|";
       display: inline-block;
       padding: 0 .05em;
-      color: #aaa;
+      color: $gold;
+
+      @media screen and (max-width: $tablet) {
+        content: none;
+      }
     }
 
     a {
       padding: 0 1em;
       color: $white;
       text-transform: uppercase;
+
+      @include letterspace;
     }
   }
 }
@@ -107,7 +115,7 @@
 }
 
 #return-to-top {
-  background: rgba(167, 193, 186, 0.8);
+  background: rgba(black, 0.6);
   border-radius: 0;
   bottom: 0;
   display: none;

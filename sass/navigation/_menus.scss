@@ -81,7 +81,7 @@
       width: 100%;
 
       &.dropdown-toggle::after {
-        border-top: 0.3em solid #A7C1BA;
+        border-top: 0.3em solid $gold;
         border-right: .2em solid transparent;
         border-left: .2em solid transparent;
         content: "";
@@ -90,7 +90,7 @@
       &:hover, &:focus {
         border: none;
         outline: 0;
-        color: #A7C1BA;
+        color: $gold;
       }
     }
   }
@@ -191,7 +191,7 @@
 
         &:hover, &:focus {
           background: none;
-          color: #A7C1BA;
+          color: $gold;
         }
       }
     }
@@ -262,7 +262,7 @@
 
         &:hover {
           text-decoration: none;
-          color: #A7C1BA;
+          color: $gold;
         }
       }
     }
@@ -317,7 +317,7 @@
 
 @media screen and (max-width: 768px) {
   .rife-nav .navbar-nav a.dropdown-toggle::after {
-    border-top: 0.3em solid #A7C1BA;
+    border-top: 0.3em solid $gold;
     border-right: .25em solid transparent;
     border-left: 0.25em solid transparent;
   }
@@ -391,18 +391,18 @@ body:not(.home) {
       .top-bar {
         -webkit-transform: rotate(0);
         transform: rotate(0);
-        background: #6a1953;
+        background: #666;
       }
 
       .middle-bar {
         opacity: 1;
-        background: #6a1953;
+        background: #666;
       }
 
       .bottom-bar {
         -webkit-transform: rotate(0);
         transform: rotate(0);
-        background: #6a1953;
+        background: #666;
       }
     }
   }
@@ -434,7 +434,7 @@ body:not(.home) {
         letter-spacing: 1px;
 
         &:hover {
-          background: #A7C1BA;
+          background: $gold;
           color: #FFF;
           box-shadow: -1px -1px 0 0 #eee;
           -webkit-font-smoothing: subpixel-antialiased;
@@ -451,7 +451,7 @@ body:not(.home) {
       }
 
       .sub-menu {
-        background: #A7C1BA;
+        background: $gold;
         left: 0;
         margin: 0;
         min-width: 160px;
@@ -513,7 +513,7 @@ body:not(.home) {
       }
 
       &:hover > a {
-        background: #A7C1BA;
+        background: $gold;
         color: #FFF;
         -webkit-font-smoothing: subpixel-antialiased;
       }
