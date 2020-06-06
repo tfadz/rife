@@ -43,7 +43,7 @@ gulp.task('sass', function() {
         'node_modules/aos/dist/aos.css',
         'sass/style.scss'
         ])
-        //.pipe(sourcemaps.init())
+        .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed' })
             .on('error', sass.logError)
         )
@@ -57,7 +57,7 @@ gulp.task('sass', function() {
 
         ]))
         .pipe(concat('style.css'))
-        //.pipe(sourcemaps.write())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./'))
         .pipe(browserSync.stream());
 });

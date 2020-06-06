@@ -1,7 +1,7 @@
 .ri-footer {
   background: linear-gradient(#1a1a1b, #111);
   color: $white;
-  font-size: 0.75rem;
+  font-size: 0.9375rem;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -33,16 +33,57 @@
 }
 
 .ri-footer__main {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
   color: #999;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  .nav-list {
+    display: flex;
+    justify-content: center;
+
+    > li {
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+
+      > a {
+        color: #999;
+      }
+    }
+
+    .sub-menu {
+      margin: 0;
+      padding: .5rem 0 0 0;
+
+      li {
+        a {
+          text-transform: capitalize;
+          padding: .25rem 0;
+        }
+      }
+    }
+  }
 
   .site-info {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9375rem;
+    text-align: center;
+    padding-top: 1.5rem;
+
+    @include letterspace;
+  }
+
+  .info {
+    padding: 0 1rem;
   }
 
   p {
     display: inline;
+    font-size: 1rem;
 
     @include letterspace;
   }
@@ -52,7 +93,7 @@
 
     &:hover {
       text-decoration: none;
-      color: #A7C1BA;
+      color: $gold;
     }
   }
 }
@@ -63,33 +104,32 @@
   }
 }
 
-.ri-footer ul {
-  display: flex;
-  padding: 1em 0;
-  width: 100%;
-  margin-left: -0.75rem;
+.footer-logo {
+  padding-right: 1.5rem;
 
-  li {
-    margin-right: .03em;
-    color: $white;
+  .svg-logo {
+    width: 70px;
+    height: 60px;
 
-    &:not(:last-child):after {
-      content: "|";
-      display: inline-block;
-      padding: 0 .05em;
-      color: $gold;
-
-      @media screen and (max-width: $tablet) {
-        content: none;
-      }
+    g {
+      fill: gray;
     }
+  }
+}
 
-    a {
-      padding: 0 1em;
+.ri-footer {
+  ul {
+    li {
+      padding: .25rem;
       color: $white;
-      text-transform: uppercase;
 
-      @include letterspace;
+      a {
+        padding: .25rem;
+        color: $white;
+        text-transform: uppercase;
+
+        @include letterspace;
+      }
     }
   }
 }

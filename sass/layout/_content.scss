@@ -16,8 +16,8 @@ body:not(.home) #content {
   }
 
   p {
-    font-size: 1.15rem;
-    line-height: 1.75rem;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
   }
 }
 
@@ -47,10 +47,6 @@ body:not(.home) #content {
   max-width: 80%;
 }
 
-.section-padding {
-  padding-top: 3em;
-  padding-bottom: 3em;
-}
 
 #primary .entry-content {
   padding-top: 2rem;
@@ -66,14 +62,14 @@ body:not(.home) #content {
   min-height: 500px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $tablet-wide) {
   .ri-scrolling {
     min-height: 400px;
     padding: 2em 0;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $tablet) {
   .ri-scrolling {
     min-height: 400px;
     padding: 2em 0;
@@ -95,7 +91,7 @@ body:not(.home) #content {
   position: inherit;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $tablet-wide) {
   .parallax {
     background-attachment: inherit;
   }

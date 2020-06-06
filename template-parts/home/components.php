@@ -17,7 +17,7 @@
 
     <?php if (get_row_layout() == "gallery"): ?>
     <!-- Gallery -->
-        <section>
+        <section class="container">
             <div class="row ri-spotlights__list no-gutters">
                 <?php if (have_rows('spotlights')) : while (have_rows('spotlights')) : the_row();
                     $gImage = get_sub_field('g_image');
@@ -26,7 +26,7 @@
                     $alt = $gImage['alt'];
                     ?>
                     <div class="col-lg-4 col-sm-12">
-                        <div class="thumb-wrap" data-aos="fade-up">
+                        <div class="thumb-wrap">
                             <a href="<?php echo $gLink ?>" style="background-image:url(<?php echo $gImage['sizes']['large'] ?>); background-repeat: no-repeat;background-size: cover;">
                                 <h3><?php echo $gTitle ?></h3>
                             </a>
@@ -40,7 +40,7 @@
 
     <?php if (get_row_layout() == "narrow_content"): ?>
     <!-- Narrow Content -->
-        <section class="container sm-width">
+        <section class="container sm-width section">
             <?php the_sub_field('content_narrow'); ?>
         </section>
     <?php endif; ?>
@@ -85,7 +85,7 @@
 
     <?php if (get_row_layout() == "panels"): ?>
     <!-- Panels -->
-    <section class="container home-panels">
+    <section class="home-panels">
  <!--        <div class="row">
             <div class="col-lg-12"><h2 class="styled">Title that describes the section</h2></div>
         </div> -->

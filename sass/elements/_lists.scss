@@ -1,26 +1,46 @@
 ul, ol {
-	margin: 0;
+  margin: 0;
   padding: 0;
 }
 
 ul {
-	list-style: none;
+  list-style: none;
+  padding-bottom: 1rem;
 }
 
 ol {
-	list-style: decimal;
+  padding-left: .9rem;
+  padding-bottom: 1rem;
+  list-style: none;
+  counter-reset: li;
+
+  li {
+    padding-bottom: 1.5rem;
+    position: relative;
+    counter-increment: li;
+    line-height: 1.5rem;
+
+    &:before {
+      content: counter(li);
+      color: black;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+  }
 }
 
 li > ul,
 li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
+  margin-bottom: 0;
+  margin-left: 1.5em;
 }
 
 dt {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+  margin: 0 1.5em 1.5em;
 }
