@@ -7,7 +7,17 @@ var rifeFunctions = (function( $ ) {
     toggleLogo();
     toggleFilter();
     shadowHeader();
+    footerNav();
   },
+
+   footerNav = function() {
+    $rf = $('.ri-footer li.menu-item-has-children');
+
+    $rf.click(function(event) {
+      $(this).find('.sub-menu').toggle();
+      $(this).toggleClass('active');
+    });
+   },
 
     slider = function() {
       $('.ri-slider').slick({

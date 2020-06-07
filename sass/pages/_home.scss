@@ -172,8 +172,8 @@
     justify-content: center;
 
     @media screen and (max-width: $tablet) {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
     }
   }
 
@@ -204,6 +204,7 @@
 
     @media screen and (max-width: $tablet) {
       display: block;
+      margin-bottom: 2rem;
     }
 
     a {
@@ -287,6 +288,7 @@
     text-align: center;
     @media screen and (max-width: $tablet) {
       padding: 2rem;
+      margin-top: 2rem;
     }
   }
 

@@ -35,7 +35,7 @@
               <?php get_template_part('template-parts/logo'); ?>
             </div>
             <div class="legal">&copy; <?php echo date("Y"); ?> Rife Photography</div>
-            <div class="info"><a href="tel:402-304-4057">(402)-304-4057</a></div> | <div class="info">maggie@rifeponcephotography.com</div>
+            <div class="info"><a href="tel:402-304-4057">(402)-304-4057</a></div> <div class="info"><a href="mailto:maggie@rifeponcephotography.com">maggie@rifeponcephotography.com</a></div>
 
           </div>
         </div>

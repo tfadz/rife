@@ -43,13 +43,66 @@
     display: flex;
     justify-content: center;
 
+    @media screen and (max-width: $phone-wide) {
+      display: block;
+      text-align: left;
+      border-top: 1px solid #666;
+    }
+
     > li {
       &:not(:last-child) {
         margin-right: 2rem;
+
+        @media screen and (max-width: $phone-wide) {
+          margin: 0;
+        }
       }
 
       > a {
         color: #999;
+
+        @media screen and (max-width: $phone-wide) {
+          min-width: 120px;
+          display: inline-block;
+        }
+      }
+
+      @media screen and (max-width: $phone-wide) {
+        display: block;
+        border-bottom: 1px solid #666;
+
+        &.menu-item-has-children {
+          position: relative;
+
+          &:after {
+            content: "\f107";
+            font-family: fontAwesome;
+            font-size: 1.5rem;
+            color: $gold;
+            position: absolute;
+            transform-origin: center center;
+            right: .5rem;
+            top: .4rem;
+            transition: .1s ease-in-out;
+          }
+
+          .sub-menu {
+            display: none;
+          }
+
+          &.active {
+            &:after {
+              content: "\f107";
+              font-family: fontAwesome;
+              font-size: 1.5rem;
+              color: $gold;
+              position: absolute;
+              right: .5rem;
+              top: .4rem;
+              transform: rotate(180deg);
+            }
+          }
+        }
       }
     }
 
@@ -75,6 +128,10 @@
     padding-top: 1.5rem;
 
     @include letterspace;
+
+    @media screen and (max-width: $phone-wide) {
+      display: block;
+    }
   }
 
   .info {

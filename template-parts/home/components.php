@@ -86,36 +86,31 @@
     <?php if (get_row_layout() == "panels"): ?>
     <!-- Panels -->
     <section class="home-panels">
- <!--        <div class="row">
-            <div class="col-lg-12"><h2 class="styled">Title that describes the section</h2></div>
-        </div> -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <?php if (have_rows('home_panel')) : while (have_rows('home_panel')) : the_row();
+              $pImage = get_sub_field('panel_image');
+              $pContent = get_sub_field('panel_content');
+              $title = get_sub_field('title');
+              ?>
+              <article class="item">
+                <aside class="content">
+                  <div class="main">
+                    <h2><?php echo $title ?></h2>
+                    <?php echo $pContent ?>
+                  </div>
+                </aside>
+                <figure>
+                  <img src="<?php echo $pImage ?>" alt="">
+                </figure>
+              </article>
+            <?php endwhile; endif; ?>
 
-      <div class="row">
-        <div class="col-lg-12">
-          <?php if (have_rows('home_panel')) : while (have_rows('home_panel')) : the_row();
-            $pImage = get_sub_field('panel_image');
-            $pContent = get_sub_field('panel_content');
-            $title = get_sub_field('title');
-          ?>
-          <article class="item">
-            <aside class="content">
-              <div class="main">
-                <h2><?php echo $title ?></h2>
-                <?php echo $pContent ?>
-                </div>
-            </aside>
-          <figure>
-            <img src="<?php echo $pImage ?>" alt="">
-          </figure>
-          </article>
-      <?php endwhile; endif; ?>
-
+          </div>
         </div>
       </div>
-
-
-           
-        </section>
+    </section>
     <?php endif; ?>
 
     <?php if (get_row_layout() == "call_to_action"): ?>

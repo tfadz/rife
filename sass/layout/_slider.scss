@@ -12,11 +12,9 @@
     visibility: visible;
     opacity: 1;
   }
-}
 
-@media screen and (max-width: 768px) {
-  .ri-slider {
-    height: 500px;
+  @media screen and (max-width: $tablet) {
+    height: 300px;
   }
 }
 
@@ -25,6 +23,10 @@
   height: 600px;
   transition: .5s all;
   width: 100%;
+
+  @media screen and (max-width: $tablet) {
+    height: 300px;
+  }
 }
 
 .slickSlider {
@@ -37,6 +39,10 @@
 
   img {
     height: 600px;
+
+    @media screen and (max-width: $tablet) {
+      height: 300px;
+    }
   }
 
   > div {
