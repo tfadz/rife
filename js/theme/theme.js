@@ -25,7 +25,7 @@ var rifeFunctions = (function( $ ) {
           dots: false,
           infinite: true,
           speed: 200,
-          cssEase: 'ease-out',
+          cssEase: 'ease-in-out',
           slidesToShow: 1,
           slidesToScroll: 1,
           centerMode: true,

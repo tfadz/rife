@@ -1,7 +1,7 @@
 .ri-slider {
   display: flex;
   overflow: hidden;
-  height: 600px;
+  height: 500px;
   margin-bottom: 2em;
   max-width: 100%;
   opacity: 0;
@@ -20,7 +20,7 @@
 
 .ri-slider__slide {
   display: block;
-  height: 600px;
+  height: 500px;
   transition: .5s all;
   width: 100%;
 
@@ -38,7 +38,7 @@
   margin: 0;
 
   img {
-    height: 600px;
+    height: 500px;
 
     @media screen and (max-width: $tablet) {
       height: 300px;

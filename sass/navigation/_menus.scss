@@ -23,18 +23,16 @@
 
       .sub-menu {
         background: white;
-        border: 1px solid rgba($black, 0.3);
         display: none;
         margin: 0;
         min-width: 280px;
         padding: 0;
         position: absolute;
         width: auto;
+        border: 1px solid #DDD;
 
         li {
-          &:not(:last-child) {
-            border-bottom: 1px solid rgba($black, 0.3);
-          }
+          border-bottom: 1px solid #DDD;
         }
 
         a {
@@ -52,9 +50,8 @@
 
       > a {
         color: black;
-        font-size: 1rem;
-        font-weight: 300;
-        letter-spacing: 2px;
+        font-size: 0.92rem;
+        letter-spacing: 3px;
         padding: 1rem;
         position: relative;
 

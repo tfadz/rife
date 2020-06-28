@@ -18,7 +18,7 @@
     <?php if (get_row_layout() == "gallery"): ?>
     <!-- Gallery -->
         <section class="container">
-            <div class="row ri-spotlights__list no-gutters">
+            <div class="row ri-spotlights__list">
                 <?php if (have_rows('spotlights')) : while (have_rows('spotlights')) : the_row();
                     $gImage = get_sub_field('g_image');
                     $gTitle = get_sub_field('g_title');
@@ -54,7 +54,7 @@
             $text = get_sub_field('text');
             $image = get_sub_field('image')['url'];
         ?>
-        <section class="container-fluid nopadding lr_img_txt" data-aos="fade">
+        <section class="container-fluid nopadding lr_img_txt">
             <div class="row">
                 <div class="col-lg-6 col-md-12 nopadding-left" style="background:url(<?php echo $image ?>)no-repeat;background-size: cover;"></div>
                 <div class="col-lg-6 col-md-12">
@@ -86,7 +86,7 @@
     <?php if (get_row_layout() == "panels"): ?>
     <!-- Panels -->
     <section class="home-panels">
-      <div class="container">
+      <div class="container wide no-padding">
         <div class="row">
           <div class="col-lg-12">
             <?php if (have_rows('home_panel')) : while (have_rows('home_panel')) : the_row();
@@ -132,12 +132,12 @@
                         <div class="cta cta1">
                             <h3><?php echo $title1 ?></h3>
                             <p><?php echo $text1 ?></p>
-                            <a target="_blank" href="<?php echo $btn1_link ?>" class="btn "><?php echo $btn1 ?></a>
+                            <a href="<?php echo $btn1_link ?>" class="btn btn-tertiary"><?php echo $btn1 ?></a>
                             <br><br>
 
                             <h3><?php echo $title2 ?></h3>
                             <p><?php echo $text2 ?></p>
-                            <div> <a target="_blank" href="<?php echo $btn2_link ?>" class="btn"><?php echo $btn2 ?></a></div>
+                            <div> <a href="<?php echo $btn2_link ?>" class="btn"><?php echo $btn2 ?></a></div>
 
                         </div>
                    </div>
