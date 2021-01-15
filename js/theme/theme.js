@@ -8,6 +8,7 @@ var rifeFunctions = (function( $ ) {
     toggleFilter();
     shadowHeader();
     footerNav();
+    missingImg();
   },
 
    footerNav = function() {
@@ -83,6 +84,13 @@ toggleFilter = function() {
   });
 },
 
+missingImg = function() {
+$("img").on("error", function() {
+  $(this).hide();
+})
+
+},
+
 shadowHeader = function() {
   $(window).scroll(function(){
     if($(window).scrollTop() >= 10 ) {
@@ -93,6 +101,8 @@ shadowHeader = function() {
     }
   });
 };
+
+var bLazy = new Blazy();
 
 return {
   init: init

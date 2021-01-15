@@ -1,3 +1,25 @@
+.mobile-home-hero {
+  display: none;
+
+  @media (max-width: $tablet-wide) {
+    display: block;
+
+    img {
+      height: 350px;
+      width: 100%;
+      object-fit: cover;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (max-width: $tablet-wide) {
+    img {
+      height: 300px;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
 .intro {
   padding-bottom: 2rem;
   padding-top: 2rem;
@@ -6,8 +28,13 @@
   background-size: 30rem;
   margin-bottom: 5rem;
 
-  @media screen and (max-width: $tablet) {
+  @media (max-width: $tablet) {
     margin-bottom: 2rem;
+  }
+
+  @media (max-width: $phone-wide) {
+    margin-bottom: 1.5rem;
+    background-size: 90%;
   }
 
   h2 {
@@ -36,7 +63,7 @@
   padding: 1rem 0;
 }
 
-@media screen and (max-width: 800px) {
+@media (max-width: 800px) {
   .ri-spotlights__list {
     display: block;
   }
@@ -51,6 +78,8 @@
   }
 
   a {
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 3px;
     display: inline-flex;
     overflow: hidden;
@@ -61,7 +90,7 @@
     transition: .2s ease-out;
     width: 100%;
 
-    @media screen and (max-width: $tablet) {
+    @media (max-width: $tablet) {
       height: 250px;
     }
 
@@ -81,7 +110,7 @@
 
       @include letterspace;
 
-      @media screen and (max-width: $tablet) {
+      @media (max-width: $tablet) {
         padding: 1rem 2rem;
         font-size: 1.5rem;
       }
@@ -118,26 +147,26 @@
   }
 }
 
-@media screen and (max-width: 800px) {
+@media (max-width: 800px) {
   .ri-spotlights__list .thumb-wrap {
     margin-bottom: 1rem;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
   .ri-spotlights__list .thumb-wrap {
     height: 250px;
     margin-bottom: 1rem;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
   .ri-spotlights__list a {
     height: 250px;
   }
 }
 
-@media screen and (max-width: 736px) {
+@media (max-width: 736px) {
   .ri-spotlights__list a h3 {
     font-size: 1.25rem;
   }
@@ -148,7 +177,7 @@
   color: white;
   background: linear-gradient(to bottom right, #DDD, #FFF, #eee);
 
-  @media screen and (max-width: $tablet) {
+  @media (max-width: $tablet) {
     border: none;
     margin-top: 1rem;
 
@@ -165,7 +194,7 @@
     flex-direction: column;
     justify-content: center;
 
-    @media screen and (max-width: $tablet) {
+    @media (max-width: $tablet) {
       padding-top: 1rem;
       padding-bottom: 1rem;
     }
@@ -206,7 +235,7 @@
       }
     }
 
-    @media screen and (max-width: $tablet) {
+    @media (max-width: $tablet) {
       max-width: 100%;
     }
   }
@@ -216,7 +245,7 @@
     color: #333;
     margin-bottom: 4rem;
 
-    @media screen and (max-width: $tablet) {
+    @media (max-width: $tablet) {
       display: block;
       margin-bottom: 2rem;
     }
@@ -236,7 +265,7 @@
     &:first-child figure {
       margin-top: -3rem;
 
-      @media screen and (max-width: $tablet) {
+      @media (max-width: $tablet) {
         margin: 0;
       }
     }
@@ -258,7 +287,7 @@
         position: relative;
         top: 2.5rem;
 
-        @media screen and (max-width: $tablet) {
+        @media (max-width: $tablet) {
           top: 0;
         }
       }
@@ -270,7 +299,7 @@
       position: relative;
       outline: 1px solid rgba(white, 0.75);
       outline-offset: -12px;
-      box-shadow: 0 0 25px 3px rgba(0,0,0,0.2);
+      box-shadow: 0 0 25px 3px rgba(0, 0, 0, 0.2);
 
       img {
         width: 100%;
@@ -297,7 +326,7 @@
     margin: 2rem auto;
     text-align: center;
 
-    @media screen and (max-width: $tablet) {
+    @media (max-width: $tablet) {
       padding: 2rem;
       margin-top: 2rem;
     }
@@ -345,15 +374,20 @@
 .lr_img_txt {
   padding-top: 3rem;
 
-  @media screen and (max-width: $tablet) {
+  @media (max-width: $tablet) {
     padding-top: 1rem;
+  }
+
+  &__img {
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .content {
     padding: 3rem 0 2rem 2rem;
     max-width: 75%;
 
-    @media screen and (max-width: $tablet) {
+    @media (max-width: $tablet) {
       padding: 1rem 0;
       max-width: 100%;
     }

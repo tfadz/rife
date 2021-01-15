@@ -4,9 +4,6 @@
 
 <div id="primary" class="content-area">
   <main id="main" class="site-main" role="main" style="padding-bottom: 5rem;">
-
-
-
     <section class="container-fluid blog-main nopadding">
 
       <div class="row">
@@ -26,7 +23,7 @@
 
         <div class="col-lg-9 col-sm-12">
           <div class="rife-posts">
-            <?php 
+            <?php
             $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
             $args = array(
               'post_type' => 'post',
@@ -39,9 +36,8 @@
             ?>
 
             <?php if ( $query->have_posts() ) : ?>
-
-              <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
-                <?php  get_template_part( 'template-parts/card-post' ); ?>
+              <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+                <?php get_template_part( 'template-parts/card-post' ); ?>
               <?php endwhile; ?>
             <?php endif; ?>
             <?php wp_reset_postdata(); ?>
@@ -49,25 +45,23 @@
 
           <div class="blog-pagination">
             <?php
-$big = 999999999; // need an unlikely integer
+            $big = 999999999;
 
-echo paginate_links( array(
-  'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-  'format' => '?page=%#%',
-  'current' => max( 1, get_query_var('paged') ),
-  'total' => $query->max_num_pages
-) );
-?>
+            echo paginate_links( array(
+              'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+              'format' => '?page=%#%',
+              'current' => max( 1, get_query_var('paged') ),
+              'total' => $query->max_num_pages
+            ) );
+            ?>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+  </main>
 </div>
-
-</div>
-</div>
-
-
-</section>
-
-</main><!-- #main -->
-</div><!-- #primary -->
 
 <?php
 get_footer();

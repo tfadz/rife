@@ -69,6 +69,7 @@ gulp.task('js', function () {
         'node_modules/slick-carousel/slick/slick.js',
         'node_modules/aos/dist/aos.js',
         'node_modules/rellax/rellax.js',
+        'node_modules/blazy/blazy.min.js',
         'node_modules/bootstrap/dist/js/bootstrap.min.js',
         'js/theme/*.js'
     ])

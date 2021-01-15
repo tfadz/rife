@@ -2,15 +2,24 @@
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <?php if (!wp_is_mobile() ) : ?>
       <section class="ri-slider">
         <?php if(have_rows('hero_slider')) : while(have_rows('hero_slider')) : the_row(); ?>
-
           <?php $img = get_sub_field('image'); ?>
           <div style="position: relative;">
             <img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
           </div>
         <?php endwhile; endif; ?>
-        </section>
+        </section>        
+      <?php endif; ?>
+      <picture class="mobile-home-hero">
+       <?php if (get_field('hero_slider')) : while(has_sub_field('hero_slider')): ?>
+         <?php $img = get_sub_field('image', $post->ID); ?>
+           <img src="<?php echo $img['url']; ?>" />
+       <?php break; endwhile; endif; ?>
+      </picture>
+
+
         <div class="container-narrow">
           <div class="row">
             <div class="col-lg-12 intro">

@@ -13,9 +13,9 @@
     opacity: 1;
   }
 
-  @media screen and (max-width: $tablet) {
-    height: 300px;
-  }
+  @media screen and (max-width: $phone-wide) {
+    display: none;
+    }
 }
 
 .ri-slider__slide {

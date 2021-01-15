@@ -11,13 +11,3 @@ $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'large');
 </a>
 </article>
 
-<?php if(!$featured_img_url) : ?>
-    <style>
-     .rife-blog-main__post {
-        background-image: url(<?php bloginfo('template_directory'); ?>/assets/images/no-image.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-    }
-</style>
-<?php endif; ?>
